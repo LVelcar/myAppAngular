@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-contador',
+  selector: 'app-contador', 
   templateUrl: './contador.component.html',
-  styleUrl: './contador.component.css'
+  styleUrls: ['./contador.component.css']
 })
-export class ContadorComponent {
-
-}
+export class ContadorComponent { }
