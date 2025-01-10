@@ -1,11 +1,29 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-formulario',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css'
+  styleUrls: ['./formulario.component.css'], 
 })
-export class FormularioComponent {
+export class FormularioComponent implements OnInit {
+  // Variables
+  openAlert: boolean = false;
 
+
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  // Método para visualizar datos en consola.
+  showName(name: string): void {
+    console.log('Hola ' + name);
+    this.openAlert = true;
+  }
+
+  // Método para cerrar el alert.
+  closeAlert(): void {
+    this.openAlert = false;
+  }
 }

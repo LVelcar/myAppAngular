@@ -1,4 +1,23 @@
 <div class="name m-2">
-    <label class="p-1 form-label" for="name">Nombre:</label>
-    <input class="form-control" type="text" id="name" placeholder="Ingrese su nombre">
+    <label class="form-label" for="name">Nombre:</label>
+    <input class="form-control" type="text" id="name" placeholder="Ingrese su nombre" #name 
+    (keyup.enter)="showName(name.value)">
+    <button class="btn btn-primary mt-2" (click)="showName(name.value)">
+      <i class="fas fa-check"></i> Mostrar en consola
+    </button>
+  </div>
+  
+  <div class="alert alert-success" *ngIf="openAlert; else message">
+    <p>Se ha enviado el mensaje correctamente</p> 
+    <button class="btn btn-danger" (click)="closeAlert()">
+        <i class="fas fa-times"></i>
+        Cerrar
+    </button>
 </div>
+
+<ng-template #message>
+    <div class="alert alert-danger m-2">
+        <p>El mensaje no se ha enviado</p>
+    </div>
+</ng-template>
+  
