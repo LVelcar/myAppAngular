@@ -1,0 +1,31 @@
+<form (ngSubmit)="enviarFormulario()" #formulario="ngForm">
+    <div class="mb-3 mt-3">
+      <label class="form-label">Nombre:</label>
+      <input type="text" class="form-control" name="nombre" #name="ngModel" placeholder="Ingresa un nombre" [(ngModel)]="persona.nombre"
+      required>
+      <div class="alert alert-danger mt-3" [hidden]="name.valid || name.pristine">
+        El nombre es obligatorio
+      </div>
+    </div>
+    <div class="mb-3"> 
+      <label class="form-label">Edad:</label>
+      <input type="number" class="form-control" name="edad" #edad="ngModel" placeholder="Ingresa una edad" [(ngModel)]="persona.edad"
+      required>
+      <div class="alert alert-danger mt-3" [hidden]="edad.valid || edad.pristine">
+        La edad es obligatoria
+      </div>
+    </div>
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Recordar
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">
+        Enviar
+    </button>
+</form>
+
+<div class="personas mt-3">
+    {{formulario.valid | json}}
+</div>
+
