@@ -5,15 +5,17 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { BuclesComponent } from './bucles/bucles.component';
 import { SwitchComponent } from './switch/switch.component';
 import { Formulario2Component } from './formulario2/formulario2.component';
+import { Formulario3Component } from './formulario3/formulario3.component';
 
 @Component({
   selector: 'app-root',
   imports: [ContadorComponent,
-     BotonesComponent,
-     BuclesComponent, 
-     FormularioComponent,
-     SwitchComponent,
-     Formulario2Component],
+      BotonesComponent,
+      BuclesComponent, 
+      FormularioComponent,
+      SwitchComponent,
+      Formulario2Component,
+      Formulario3Component],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
